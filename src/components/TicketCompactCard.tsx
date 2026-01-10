@@ -16,13 +16,18 @@ export function TicketCompactCard({ ticket, onClick }: TicketCompactCardProps) {
     return date.toLocaleDateString('ja-JP', { month: 'short', day: 'numeric' }); // 月日のみ
   };
 
+  const formatTime = (timeString: string | undefined) => {
+    if (!timeString) return '';
+    return timeString.slice(0, 5); // HH:MM形式
+  };
+
   return (
     <div
       className="flex items-center space-x-3 p-2 border-b border-gray-200 last:border-b-0 cursor-pointer hover:bg-pink-50 transition-colors"
       onClick={() => onClick(ticket)}
     >
-      <span className="text-sm font-medium text-gray-700">
-        {formatDate(ticket.eventDate)}
+      <span className="text-sm font-medium text-gray-700 whitespace-nowrap">
+        {formatDate(ticket.eventDate)}{ticket.startTime && ` ${formatTime(ticket.startTime)}`}
       </span>
       <span className="text-sm text-gray-600 truncate flex-1 min-w-0">
         {ticket.venue}
