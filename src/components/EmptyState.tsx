@@ -21,12 +21,15 @@ export function EmptyState({ onAddTicket, onLoadSampleData }: EmptyStateProps) {
         >
           + チケットを追加
         </button>
-        <button
-          onClick={onLoadSampleData}
-          className="w-full sm:w-auto bg-white hover:bg-pink-50 text-pink-600 font-bold py-3 px-6 rounded-lg transition-colors border border-pink-200"
-        >
-          サンプルデータを読み込む
-        </button>
+        <div className="flex flex-col items-center">
+          <button
+            onClick={onLoadSampleData}
+            className="w-full sm:w-auto bg-white hover:bg-pink-50 text-pink-600 font-bold py-3 px-6 rounded-lg transition-colors border border-pink-200"
+          >
+            サンプルデータを読み込む
+          </button>
+          <span className="text-xs text-gray-400 mt-1">使い方を確認したい方はこちら</span>
+        </div>
       </div>
        <div className="mt-8 text-sm text-gray-400">
         <p>※ このツールはすべてのデータをブラウザ内（ローカルストレージ）に保存します。</p>
