@@ -372,12 +372,15 @@ export default function Home() {
           </div>
         )}
 
-        <footer className="mt-12 text-center text-xs text-gray-400">
+        <footer className="mt-12 text-center text-xs text-gray-400 space-y-1">
           <p>
             <strong>データについて:</strong> このアプリケーションは、すべてのデータをあなたのブラウザ内（ローカルストレージ）にのみ保存します。
           </p>
           <p>
             データが外部のサーバーに送信・保存されることは一切ありません。
+          </p>
+          <p className="mt-2">
+            <strong>免責事項:</strong> 本ツールの利用により生じた損害について、開発者は一切の責任を負いません。ブラウザのデータ消去等によりデータが失われる可能性があります。大切なデータは定期的にエクスポートしてバックアップしてください。
           </p>
         </footer>
       </main>
