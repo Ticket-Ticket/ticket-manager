@@ -19,7 +19,7 @@ export const sampleTickets: Ticket[] = [
     tradeMethod: 'qr',
     status: 'unpaid',
     price: 9800,
-    memo: '当選したけど日程的に厳しいかも。入金期限1/20。欲しい人いたら支払い番号渡す。',
+    memo: '当選したけど日程的に厳しいかも。入金期限1/20。',
     createdAt: '2026-01-12T10:00:00.000Z',
     updatedAt: '2026-01-12T10:00:00.000Z',
   },

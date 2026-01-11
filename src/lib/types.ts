@@ -14,7 +14,7 @@ export type PaymentTiming =
   'platform' |          // アプリ/サイト通し
   'partially_platform'| // 一部アプリ/サイト通し
   'postpaid' |          // 後払い
-  'cash_on_delivery' |  // 当日手渡し
+  'cash_on_delivery' |  // 当日精算
   'each' |              // 都度清算
   'app' |               // アプリ経由
   'none';               // なし
@@ -126,7 +126,7 @@ export const PAYMENT_TIMING_LABELS: Record<PaymentTiming, string> = {
   platform: 'アプリ/サイト通し',
   partially_platform: '一部アプリ/サイト通し',
   postpaid: '後払い',
-  cash_on_delivery: '当日手渡し',
+  cash_on_delivery: '当日精算',
   each: '都度清算',
   app: 'アプリ経由',
   none: 'なし',

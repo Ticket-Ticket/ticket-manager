@@ -25,6 +25,8 @@ interface TicketFormModalProps {
   isDuplicate?: boolean;
   tourNames: string[];
   nameHolders: string[];
+  performerNames: string[];
+  venues: string[];
 }
 
 const defaultFormData: CreateTicketInput = {
@@ -61,6 +63,8 @@ export function TicketFormModal({
   isDuplicate,
   tourNames,
   nameHolders,
+  performerNames,
+  venues,
 }: TicketFormModalProps) {
   const [formData, setFormData] = useState<CreateTicketInput>(defaultFormData);
   const [isLoading, setIsLoading] = useState(false);
@@ -303,11 +307,17 @@ export function TicketFormModal({
                 <input
                   type="text"
                   name="performerName"
+                  list="performerNames-list"
                   value={formData.performerName}
                   onChange={handleChange}
                   placeholder="例: SixTONES"
                   className={inputClass}
                 />
+                <datalist id="performerNames-list">
+                  {performerNames.map(name => (
+                    <option key={name} value={name} />
+                  ))}
+                </datalist>
               </div>
               <div>
                 <label className={labelClass}>名義</label>
@@ -355,12 +365,18 @@ export function TicketFormModal({
                   <input
                     type="text"
                     name="venue"
+                    list="venues-list"
                     value={formData.venue}
                     onChange={handleChange}
                     required
                     placeholder="例: 東京ドーム"
                     className={inputClass}
                   />
+                  <datalist id="venues-list">
+                    {venues.map(name => (
+                      <option key={name} value={name} />
+                    ))}
+                  </datalist>
                 </div>
                 <div>
                   <label className={labelClass}>座席情報</label>
