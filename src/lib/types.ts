@@ -1,5 +1,5 @@
 // ステータス
-export type Status = 'pending' | 'recruiting' | 'confirmed' | 'paid' | 'received' | 'completed';
+export type Status = 'unpaid' | 'pending' | 'recruiting' | 'confirmed' | 'paid' | 'received' | 'completed';
 
 // 取引方法
 export type TradeMethod = 'qr' | 'accompany' | 'slot' | 'random' | 'exchange' | 'payment-number' | 'friend' | 'other';
@@ -87,6 +87,7 @@ export type UpdateTicketInput = Partial<CreateTicketInput>;
 
 // ステータスラベル
 export const STATUS_LABELS: Record<Status, string> = {
+  unpaid: '未入金',
   pending: '保留',
   recruiting: '募集中',
   confirmed: '確定',
@@ -145,10 +146,11 @@ export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
 
 // ステータスの順序
 export const STATUS_ORDER: Record<Status, number> = {
-  pending: 0,
-  recruiting: 1,
-  confirmed: 2,
-  paid: 3,
-  received: 4,
-  completed: 5,
+  unpaid: 0,
+  pending: 1,
+  recruiting: 2,
+  confirmed: 3,
+  paid: 4,
+  received: 5,
+  completed: 6,
 };

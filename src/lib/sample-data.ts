@@ -4,10 +4,31 @@ import { Ticket } from './types';
 // 各機能の使い方がわかるよう、様々なパターンを用意
 export const sampleTickets: Ticket[] = [
   // ========================================
+  // 未入金パターン（当選したけどまだ入金してない）
+  // ========================================
+
+  // 未入金: 当選したけど入金するか迷っている
+  {
+    id: 'sample-0',
+    tourName: 'King & Prince LIVE TOUR 2026',
+    performerName: 'King & Prince',
+    nameHolder: '自分名義',
+    eventDate: '2026-08-10',
+    startTime: '17:00',
+    venue: '東京ドーム',
+    tradeMethod: 'qr',
+    status: 'unpaid',
+    price: 9800,
+    memo: '当選したけど日程的に厳しいかも。入金期限1/20。欲しい人いたら支払い番号渡す。',
+    createdAt: '2026-01-12T10:00:00.000Z',
+    updatedAt: '2026-01-12T10:00:00.000Z',
+  },
+
+  // ========================================
   // 売り手パターン（自分のチケットを譲る）
   // ========================================
 
-  // 保留: まだどうするか決めていない
+  // 保留: 入金済みだけどどうするか迷っている
   {
     id: 'sample-1',
     tourName: 'Aぇ! group LIVE TOUR 2026 "RUNWAY"',
@@ -19,7 +40,7 @@ export const sampleTickets: Ticket[] = [
     tradeMethod: 'qr',
     status: 'pending',
     price: 9800,
-    memo: '友達と被ったけど、まだどうするか決めてない。様子見。',
+    memo: '入金済み。友達と被ったけど、譲るか自分で行くかまだ迷ってる。',
     createdAt: '2026-01-10T10:00:00.000Z',
     updatedAt: '2026-01-10T10:00:00.000Z',
   },
