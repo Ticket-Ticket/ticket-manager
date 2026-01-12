@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "チケステ｜現場・名義・金銭の進捗管理ツール",
     description: "チケットの当選管理から、同行者との精算・受渡状況まで一目で把握。サーバー保存なし、登録不要で今すぐ使えるチケットステータス管理アプリ。",
     siteName: "チケステ",
-    // images: [{ url: "/og-image.png", width: 1200, height: 630 }], // TODO: OGP画像を設定
+    images: [{ url: "/thumbnail.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
