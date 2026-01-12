@@ -1,15 +1,15 @@
 import { Ticket } from './types';
 
-// 架空のアーティスト・会場を使用したサンプルデータ
-// 各機能の使い方がわかるよう、様々なパターンを用意
-export const sampleTickets: Ticket[] = [
+// スクリーンショット撮影用の完全架空デモデータ
+// URLパラメータ ?demo=true で表示
+export const demoTickets: Ticket[] = [
   // ========================================
   // AURORA PIXELS - LIVE TOUR 2026 'PRISM'
   // ========================================
 
   // 募集中: Xで同行者募集
   {
-    id: 'sample-1',
+    id: 'demo-1',
     tourName: "AURORA PIXELS LIVE TOUR 2026 'PRISM'",
     performerName: 'AURORA PIXELS',
     nameHolder: '自分名義',
@@ -29,7 +29,7 @@ export const sampleTickets: Ticket[] = [
 
   // 確定: 同行者決定
   {
-    id: 'sample-2',
+    id: 'demo-2',
     tourName: "AURORA PIXELS LIVE TOUR 2026 'PRISM'",
     performerName: 'AURORA PIXELS',
     nameHolder: '自分名義',
@@ -48,7 +48,7 @@ export const sampleTickets: Ticket[] = [
 
   // 交換確定
   {
-    id: 'sample-3',
+    id: 'demo-3',
     tourName: "AURORA PIXELS LIVE TOUR 2026 'PRISM'",
     performerName: 'AURORA PIXELS',
     nameHolder: '自分名義',
@@ -77,7 +77,7 @@ export const sampleTickets: Ticket[] = [
 
   // 保留: 入金済みだけど迷い中
   {
-    id: 'sample-4',
+    id: 'demo-4',
     tourName: "BLUE NOSTALGY Special Stage 'UNFOLD'",
     performerName: 'BLUE NOSTALGY',
     nameHolder: '自分名義',
@@ -94,7 +94,7 @@ export const sampleTickets: Ticket[] = [
 
   // 確定: QRごと譲渡
   {
-    id: 'sample-5',
+    id: 'demo-5',
     tourName: "BLUE NOSTALGY Special Stage 'UNFOLD'",
     performerName: 'BLUE NOSTALGY',
     nameHolder: '自分名義',
@@ -116,7 +116,7 @@ export const sampleTickets: Ticket[] = [
 
   // 金銭処理済: 支払い完了、チケット待ち
   {
-    id: 'sample-6',
+    id: 'demo-6',
     tourName: "BLUE NOSTALGY Special Stage 'UNFOLD'",
     performerName: 'BLUE NOSTALGY',
     eventDate: '2026-05-12',
@@ -140,7 +140,7 @@ export const sampleTickets: Ticket[] = [
 
   // 未入金
   {
-    id: 'sample-7',
+    id: 'demo-7',
     tourName: "THE VELVET Anniversary Live 'RESONANCE'",
     performerName: 'THE VELVET',
     nameHolder: '自分名義',
@@ -157,7 +157,7 @@ export const sampleTickets: Ticket[] = [
 
   // 受渡済: デジチケ送付完了
   {
-    id: 'sample-8',
+    id: 'demo-8',
     tourName: "THE VELVET Anniversary Live 'RESONANCE'",
     performerName: 'THE VELVET',
     nameHolder: '自分名義',
@@ -174,7 +174,7 @@ export const sampleTickets: Ticket[] = [
     mainContact: 'https://x.com/velvet_fan22',
     payments: [
       {
-        id: 'payment-sample-1',
+        id: 'payment-demo-1',
         amount: 11500,
         paidAt: '2026-02-05T10:00:00.000Z',
         method: 'bank',
@@ -188,7 +188,7 @@ export const sampleTickets: Ticket[] = [
 
   // 完了
   {
-    id: 'sample-9',
+    id: 'demo-9',
     tourName: "THE VELVET Anniversary Live 'RESONANCE'",
     performerName: 'THE VELVET',
     nameHolder: '自分名義',
@@ -207,7 +207,7 @@ export const sampleTickets: Ticket[] = [
 
   // 番手で確定
   {
-    id: 'sample-10',
+    id: 'demo-10',
     tourName: "THE VELVET Anniversary Live 'RESONANCE'",
     performerName: 'THE VELVET',
     nameHolder: '友人C名義',

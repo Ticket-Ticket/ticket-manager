@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Ticket, CreateTicketInput, UpdateTicketInput, Status, STATUS_ORDER } from '@/lib/types';
 import { storage } from '@/lib/storage';
+import { demoTickets } from '@/lib/demo-data';
 
 export type SortKey = 'eventDate' | 'createdAt' | 'status' | 'price';
 export type SortOrder = 'asc' | 'desc';
@@ -14,10 +15,11 @@ interface UseTicketsOptions {
   dateTo?: string;
   sortBy?: SortKey;
   sortOrder?: SortOrder;
+  demoMode?: boolean;
 }
 
 export function useTickets(options: UseTicketsOptions = {}) {
-  const { filterStatus = 'all', searchQuery = '', dateFrom = '', dateTo = '', sortBy = 'eventDate', sortOrder = 'asc' } = options;
+  const { filterStatus = 'all', searchQuery = '', dateFrom = '', dateTo = '', sortBy = 'eventDate', sortOrder = 'asc', demoMode = false } = options;
 
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [loading, setLoading] = useState(true);
@@ -27,8 +29,13 @@ export function useTickets(options: UseTicketsOptions = {}) {
   const fetchTickets = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await storage.getAll();
-      setTickets(data);
+      // デモモードの場合はデモデータを使用
+      if (demoMode) {
+        setTickets(demoTickets);
+      } else {
+        const data = await storage.getAll();
+        setTickets(data);
+      }
       setError(null);
     } catch (e) {
       setError('データの取得に失敗しました');
@@ -36,7 +43,7 @@ export function useTickets(options: UseTicketsOptions = {}) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [demoMode]);
 
   useEffect(() => {
     fetchTickets();

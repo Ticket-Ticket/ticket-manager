@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useTickets } from '@/hooks/useTickets';
 import { TicketCard } from '@/components/TicketCard';
@@ -9,7 +10,10 @@ import { TicketFormModal } from '@/components/TicketFormModal';
 import { Footer } from '@/components/Footer';
 import { Status, STATUS_LABELS, Ticket, CreateTicketInput } from '@/lib/types';
 
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams();
+  const demoMode = searchParams.get('demo') === 'true';
+
   const [filterStatus, setFilterStatus] = useState<Status | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [dateFrom, setDateFrom] = useState('');
@@ -31,7 +35,7 @@ export default function Home() {
     exportTickets,
     importTickets,
     loadSampleData,
-  } = useTickets({ filterStatus, searchQuery, dateFrom, dateTo });
+  } = useTickets({ filterStatus, searchQuery, dateFrom, dateTo, demoMode });
 
   const handleStatusChange = async (id: string, status: Status) => {
     await updateTicket(id, { status });
@@ -498,5 +502,13 @@ export default function Home() {
         venues={venues}
       />
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">読み込み中...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
