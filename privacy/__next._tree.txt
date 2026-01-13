@@ -1,0 +1,2 @@
+:HL["/ticket-manager/_next/static/chunks/cb84f74d327d72e6.css","style"]
+0:{"buildId":"93W2vodnTxOBtB3T_D9GJ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"privacy","paramType":null,"paramKey":"privacy","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
